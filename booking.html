@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Service</title>
+  <link rel="stylesheet" href="booking.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet"> 
+</head>
+<body>
+  <div class="container">
+    <h1>Enter Booking Details</h1>
+    <form id="bookingForm">
+      <div class="form-section">
+        <div class="section-header">
+          <h2>Sender Information</h2>
+        </div>
+        <div class="form-group">
+          <label for="senderName">Sender Name:</label>
+          <input type="text" id="senderName" name="senderName" required> 
+          <span id="senderNameError" class="error"></span>
+        </div>
+        <div class="form-group">
+          <label for="senderAddress">Sender Address:</label>
+          <input type="text" id="senderAddress" name="senderAddress" required>
+          <span id="senderAddressError" class="error"></span>
+        </div>
+        <div class="form-group">
+          <label for="senderMobile">Sender Mobile:</label>
+          <input type="tel" id="senderMobile" name="senderMobile" pattern="[0-9]{10}" required> 
+          <span id="senderMobileError" class="error"></span>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <div class="section-header">
+          <h2>Receiver Information</h2>
+        </div>
+        <div class="form-group">
+          <label for="receiverName">Receiver Name:</label>
+          <input type="text" id="receiverName" name="receiverName" required>
+          <span id="receiverNameError" class="error"></span>
+        </div>
+        <div class="form-group">
+          <label for="receiverAddress">Receiver Address:</label>
+          <input type="text" id="receiverAddress" name="receiverAddress" required>
+          <span id="receiverAddressError" class="error"></span>
+        </div>
+        <div class="form-group">
+          <label for="receiverMobile">Receiver Mobile:</label>
+          <input type="tel" id="receiverMobile" name="receiverMobile" pattern="[0-9]{10}" required>
+          <span id="receiverMobileError" class="error"></span>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <div class="section-header">
+          <h2>Parcel Details</h2>
+        </div>
+        <div class="form-group">
+          <label for="weight">Parcel Weight (kg):</label>
+          <input type="number" id="weight" name="weight" min="0" step="0.1" required>
+          <span id="weightError" class="error"></span>
+        </div>
+        <div class="form-group">
+          <label for="parcelDescription">Parcel Description:</label>
+          <textarea id="parcelDescription" name="parcelDescription"></textarea> 
+          <span id="parcelDescriptionError" class="error"></span>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <div class="section-header">
+          <h2>Shipping Options</h2>
+        </div>
+        <div class="form-group">
+          <label for="deliveryOption">Delivery Option:</label>
+          <select id="deliveryOption" name="deliveryOption" required>
+            <option value="">--Select--</option>
+            <option value="standard">Standard</option>
+            <option value="express">Express</option>
+          </select>
+          <span id="deliveryOptionError" class="error"></span>
+        </div>
+        <div class="form-group">
+          <label for="packingOption">Packing Option:</label>
+          <select id="packingOption" name="packingOption" required>
+            <option value="">--Select--</option>
+            <option value="eco">Eco-Friendly</option>
+            <option value="standard">Standard</option>
+          </select>
+          <span id="packingOptionError" class="error"></span>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <div class="section-header">
+          <h2>Date and Time</h2>
+        </div>
+        <div class="form-group">
+          <label for="pickupDate">Pickup Date:</label>
+          <input type="date" id="pickupDate" name="pickupDate" required>
+          <span id="pickupDateError" class="error"></span>
+        </div>
+        <div class="form-group">
+          <label for="pickupTime">Pickup Time:</label>
+          <input type="time" id="pickupTime" name="pickupTime" required>
+          <span id="pickupTimeError" class="error"></span>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <div class="section-header">
+          <h2>Cost Summary</h2>
+          <p id="costSummary"></p> 
+        </div>
+        <button type="button" id="calculateCost">Calculate Cost</button>
+      </div>
+
+      <button type="submit" id="submitBooking">Submit Booking</button>
+
+    </form>
+  </div>
+  <script src="booking.js"></script>
+</body>
+</html>

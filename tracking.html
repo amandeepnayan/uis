@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parcel Tracking</title>
+  <link rel="stylesheet" href="tracking.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet"> 
+</head>
+<body>
+  <div class="container"> 
+    <header>
+      <h1>Parcel Tracking System</h1>
+    </header>
+    <main>
+      <section id="customerSection"> 
+        <h2>Track Your Parcel</h2>
+        <div class="input-group">
+          <input type="text" id="searchBookingId" placeholder="Enter your Booking ID" required>
+          <button id="searchBtn">Track</button>
+        </div>
+        <div id="statusDisplay">
+          <h3>Parcel Status</h3>
+          <p id="bookingDetails"></p>
+          <p id="parcelStatus"></p>
+        </div>
+        <div id="errorMessage" class="error">
+          <p>Invalid Booking ID! Please check and try again.</p>
+        </div>
+      </section>
+
+      <section id="officerSection"> 
+        <h2>Officer Dashboard</h2>
+        <div class="input-group">
+          <input type="text" id="searchOfficerId" placeholder="Search by Customer ID or Booking ID">
+          <button id="searchOfficerBtn">Search</button>
+        </div>
+        <div id="allParcelDetails"></div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2024 Parcel Tracking System</p>
+    </footer>
+  </div> 
+  <script src="tracking.js"></script>
+</body>
+</html>

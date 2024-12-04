@@ -1,0 +1,142 @@
+body {
+    font-family: 'Roboto Mono', monospace;
+    background-color: #212529;
+    color: #e9ecef;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 800px;
+    background: #282c34;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    margin-top: 30px;
+    position: relative;
+  }
+  
+  .container::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: -1;
+    border-radius: 16px;
+    background: linear-gradient(to right, #007bff, #ffc107);
+    background-size: 400% 400%;
+    animation: glow 5s ease infinite;
+  }
+  
+  @keyframes glow {
+    0% { background-position: 0 0; }
+    50% { background-position: 100% 0; }
+    100% { background-position: 0 0; }
+  }
+  
+  h1 {
+    text-align: center;
+    color: #e9ecef;
+    margin-bottom: 20px;
+    font-size: 2em;
+  }
+  
+  .form-section {
+    margin-bottom: 25px;
+  }
+  
+  .section-header h2 {
+    color: #ffc107;
+    margin-bottom: 15px;
+    position: relative; /* For the underline */
+  }
+  
+  .section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: #ffc107;
+    border-radius: 2px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ced4da;
+    font-weight: 500;
+  }
+  
+  input,
+  select,
+  textarea {
+    width: calc(100% - 10px);
+    padding: 10px;
+    border: 1px solid #495057;
+    border-radius: 4px;
+    background-color: #343a40;
+    color: #e9ecef;
+    transition: border-color 0.3s ease;
+  }
+  
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    border-color: #ffc107;
+  }
+  
+  .error {
+    color: #dc3545;
+    font-size: 0.9em;
+    margin-top: 5px;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  #costSummary {
+    text-align: center;
+    font-size: 1.1em;
+    color: #28a745;
+    margin-top: 15px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .container {
+      padding: 20px;
+    }
+  
+    input,
+    select,
+    textarea,
+    button {
+      width: 100%;
+    }
+  }
